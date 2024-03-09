@@ -13,5 +13,4 @@ fun main(){
     minute = 55
 
     println("%02d:%02d".format(hour, minute))
-
 }
