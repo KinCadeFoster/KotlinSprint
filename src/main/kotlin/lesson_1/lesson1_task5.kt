@@ -9,7 +9,7 @@ fun main() {
     val fullMinutesInSpace = (SECONDS_IN_SPACE % SECONDS_IN_HOUR) / SECONDS_IN_MINUTE
     val fullHoursInSpace = SECONDS_IN_SPACE / SECONDS_IN_HOUR
 
-    println("Время проведенное в космосе: " + "%02d".format(fullHoursInSpace) + ":" + "%02d".format(fullMinutesInSpace)
-            + ":" + "%02d".format(fullSecondsInSpace))
+    println("Время проведенное в космосе: ${"%02d".format(fullHoursInSpace)}:" +
+            "${"%02d".format(fullMinutesInSpace)}:${"%02d".format(fullSecondsInSpace)}")
 
 }
