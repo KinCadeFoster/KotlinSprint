@@ -5,13 +5,13 @@ fun main(){
     var hour = 9
     var minute = 7
 
-    print("Гагарин выполнил полет в $year году, ")
-    print("в $hour часов ")
-    println("$minute минут.")
+    println("%02d".format(year))
+    println("%02d".format(hour))
+    println("%02d".format(minute))
 
     hour = 10
     minute = 55
 
-    println("Время посадки космического аппарата в $hour:$minute.")
+    println("%02d:%02d".format(hour, minute))
 
 }
