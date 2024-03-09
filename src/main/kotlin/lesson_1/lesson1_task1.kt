@@ -1,9 +1,7 @@
 package lesson_1
 
 fun main() {
-    val numberOfOrders = 75
-    val thankYouMessage = "Спасибо за ваш заказ! Надеемся увидеть вас снова!"
+    val numberOfOrders: Int = 75
+    val thankYouMessage: String = "Спасибо за ваш заказ! Надеемся увидеть вас снова!"
 
-    println(numberOfOrders)
-    println(thankYouMessage)
 }
