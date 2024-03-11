@@ -1,11 +1,13 @@
 package lesson_2
 
-const val DEPOSIT_AMOUNT = 70000
-const val INTEREST_RATE = 16.7
-const val DEPOSIT_TERM_YEARS = 20
+import kotlin.math.pow
 
-fun main(){
-    val amount = DEPOSIT_AMOUNT.toDouble() * Math.pow(1 + INTEREST_RATE / 100, DEPOSIT_TERM_YEARS.toDouble())
+
+fun main() {
+    val depositAmount = 70000
+    val interestRate = 16.7
+    val depositTermYears = 20
+    val amount = depositAmount.toDouble() * (1 + interestRate / 100).pow(depositTermYears.toDouble())
 
     println("%.3f".format(amount))
 }
