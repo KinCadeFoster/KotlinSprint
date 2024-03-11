@@ -1,11 +1,16 @@
 package lesson_2
 
-const val CRYSTAL_ORE = 7
-const val IRON_ORE = 11
-const val BUF = 0.2
+fun main() {
+    val crystalOre = 7
+    val ironOre = 11
+    val buffInPercent = 20
 
-
-fun main(){
-    println("Кколиичество дополнительных материалов с бафом +20% для кристаллической руды: ${(CRYSTAL_ORE * BUF).toInt()}")
-    println("Кколиичество дополнительных материалов с бафом +20% для железной руды руды: ${(IRON_ORE * BUF).toInt()}")
+    println(
+        "Колиичество дополнительных материалов с бафом +$buffInPercent% для кристаллической руды: " +
+                "${(crystalOre * (buffInPercent.toDouble() / 100)).toInt()}"
+    )
+    println(
+        "Колиичество дополнительных материалов с бафом +$buffInPercent% для железной руды руды: " +
+                "${(ironOre * (buffInPercent.toDouble() / 100)).toInt()}"
+    )
 }
