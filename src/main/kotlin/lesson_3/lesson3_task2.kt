@@ -10,7 +10,3 @@ fun main() {
     println("$oldLastName $name $patronymic, $age лет")
     println("$lastName $name $patronymic, ${age + 2} года")
 }
-
-
-
-
