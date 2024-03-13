@@ -1,12 +1,11 @@
 package lesson_3
 
-fun main(){
+fun main() {
     val userName = "Василий"
     val dayGreetings = ", добрый день! "
     val nightGreetings = ", доброй ночи! "
-    var greetings = ""
 
-    greetings = userName + dayGreetings
+    var greetings: String = userName + dayGreetings
     println(greetings)
 
     greetings = userName + nightGreetings
