@@ -1,6 +1,6 @@
 package lesson_5
 
-fun main(){
+fun main() {
     print("Решите пример: 5 + 1\nВведите ответ: ")
     val answer = readln().toInt()
 
