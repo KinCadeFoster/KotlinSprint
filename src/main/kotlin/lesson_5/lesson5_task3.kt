@@ -10,9 +10,16 @@ fun main() {
     print("Введите второе число от 0 до 42: ")
     val number2 = readln().toInt()
 
-    if (number1 == winningNumber1 && number2 == winningNumber2 || number1 == winningNumber2 && number2 == winningNumber1) {
+    if (number1 == winningNumber1 &&
+        number2 == winningNumber2 ||
+        number1 == winningNumber2 &&
+        number2 == winningNumber1) {
         println("Поздравляем! Вы выиграли главный приз!")
-    } else if (number1 == winningNumber1 || number1 == winningNumber2 || number2 == winningNumber1 || number2 == winningNumber2) {
+    } else if (
+        number1 == winningNumber1 ||
+        number1 == winningNumber2 ||
+        number2 == winningNumber1 ||
+        number2 == winningNumber2) {
         println("Вы выиграли утешительный приз!")
     } else {
         println("Неудача!")
