@@ -5,13 +5,9 @@ fun main() {
     var timerSeconds = readln().toInt()
 
     while (timerSeconds >= 0) {
-        if (timerSeconds > 0) {
-            println("Осталось секунд: $timerSeconds")
-            Thread.sleep(1000)
-            timerSeconds--
-        } else {
-            println("Время вышло!")
-            break
-        }
+        println("Осталось секунд: $timerSeconds")
+        Thread.sleep(1000)
+        timerSeconds--
     }
+    println("Время вышло!")
 }
