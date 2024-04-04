@@ -6,7 +6,8 @@ fun main() {
     print("Введите ваш пароль: ")
     val password = readln()
 
-    while (true) {
+
+    do {
         print("Для вхоода в приложение введите ваш логин: ")
         val enterLogin = readln()
 
@@ -19,5 +20,6 @@ fun main() {
         } else {
             println("Неверный пароль, повторите еще раз!")
         }
-    }
+    } while (login != enterLogin && password != enterPassword)
+
 }
