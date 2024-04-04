@@ -6,11 +6,7 @@ fun main() {
     var attempts = 5
     val number = getRandomNumber()
 
-    while (attempts >= 0) {
-        if (attempts == 0) {
-            println("Было загадано число $number")
-            break
-        }
+    do {
         print("Введите ваше число: ")
         val userNumber = readln().toInt()
         if (userNumber == number) {
@@ -20,7 +16,8 @@ fun main() {
             println("Неверно")
             attempts--
         }
-    }
+    } while (attempts > 0)
+    println("Было загадано число $number")
 }
 
 fun getRandomNumber(): Int {
