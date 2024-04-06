@@ -6,6 +6,8 @@ import kotlin.random.Random
 fun main() {
     var attempts = 3
 
+    userLogin()
+
     do {
         val num1 = getRandomNumber()
         val num2 = getRandomNumber()
@@ -14,14 +16,15 @@ fun main() {
         val userAnswer = readln().toInt()
 
         if (num1 + num2 == userAnswer) {
+            println("Добро пожаловать!")
             attempts = 0
-            userLogin()
         } else {
             println("Ответ не верный, попробуй еще раз")
             attempts--
             if (attempts == 0) println("Доступ запрещен!")
         }
     } while (attempts > 0)
+
 }
 
 fun getRandomNumber(): Int {
