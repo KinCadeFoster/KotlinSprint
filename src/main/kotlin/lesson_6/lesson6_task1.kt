@@ -13,11 +13,12 @@ fun main() {
 
         print("Для вхоода в приложение введите ваш пароль: ")
         val enterPassword = readln()
+        val loginFlag = login != enterLogin && password != enterPassword
 
-        if (login != enterLogin && password != enterPassword)
+        if (loginFlag)
             println("Неверный пароль, повторите еще раз!")
 
-    } while (login != enterLogin && password != enterPassword)
+    } while (loginFlag)
 
     println("Вы авторизованы!")
 }
