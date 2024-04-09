@@ -19,7 +19,3 @@ fun main() {
     } while (attempts > 0)
     println("Было загадано число $number")
 }
-
-fun getRandomNumber(): Int {
-    return Random.nextInt(1, 9)
-}
