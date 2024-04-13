@@ -1,6 +1,6 @@
 package lesson_10
 
-fun main(){
+fun main() {
     print("Введите логин (минимум 4 символа): ")
     val userLogin = readln()
 
