@@ -1,5 +1,8 @@
 package lesson_10
 
+const val TOKEN_LENGTH = 32
+
+
 fun main() {
     val storedLogin = "123"
     val storedPassword = "123"
@@ -25,10 +28,10 @@ fun getToken(interLogin: String, interPassword: String, storedUsername: String, 
 }
 
 fun getGenerateToken(): String {
-    val tokenChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_.~"
+    val tokenChars = "A".."~"
     val token = StringBuilder()
-    for (i in 1..32) {
-        token.append(tokenChars.random())
+    for (i in 1..TOKEN_LENGTH) {
+        token.append(tokenChars.toString().random())
     }
     return token.toString()
 }
