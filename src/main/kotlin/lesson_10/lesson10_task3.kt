@@ -8,7 +8,7 @@ fun main() {
 }
 
 fun generatePassword(passwordLength: Int): StringBuilder {
-    val specialChars = "!\"#\$%&'()*+,-./"
+    val specialChars = '!'.. '/'
     val numbers = 0..9
     val password = StringBuilder()
 
