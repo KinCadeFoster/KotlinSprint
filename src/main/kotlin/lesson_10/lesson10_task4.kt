@@ -24,8 +24,8 @@ fun playGame() {
 
         println("Хотитет бросить кости еще раз?")
         val answer = readln()
-        if (answer == "нет") {
-            println("Количестыво выйшрышей: $humanWinsCounts")
+        if (answer.equals("нет", ignoreCase = true)) {
+            println("Количество выйгрышей: $humanWinsCounts")
             break
         }
     } while (true)
