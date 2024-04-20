@@ -3,31 +3,25 @@ package lesson_11
 class Room(
     val cover: String,
     val roomName: String,
-    val userList: MutableList<MutableMap<String, Any>>,
+    val userList: MutableList<User>,
     private val myListStatus: List<String> = listOf("микрофон выключен", "разговаривает", "пользователь заглушен"),
 ) {
     fun addUserToRoom(user: User) {
-        val userData = mutableMapOf<String, Any>()
-        userData["nickName"] = (user.nickName)
-        userData["avatar"] = (user.avatar)
-        userData["speakStatus"] = (myListStatus[0])
-
-        userList.add(userData)
-
+        userList.add(user)
     }
 
     fun updateStatusBadge(nickName: String, newBadgeStatus: Int) {
         userList.forEach { it ->
-            if (it["nickName"] == nickName) {
-                it["speakStatus"] = myListStatus[newBadgeStatus]
+            if (it.nickName == nickName) {
+                it.badgeStatus = newBadgeStatus
             }
         }
     }
 
     fun getTextBadgeStatus(nickName: String): () -> String {
         userList.forEach { it ->
-            if (it["nickName"] == nickName) {
-                return { it["speakStatus"].toString() }
+            if (it.nickName == nickName) {
+                return { myListStatus[it.badgeStatus] }
             }
         }
         return { "Статус не найден" }
@@ -41,10 +35,11 @@ class Room(
 class User(
     val nickName: String,
     val avatar: String,
+    var badgeStatus: Int = 0
 
-    ) {
+) {
     override fun toString(): String {
-        return "User(nickname='$nickName', login='$avatar')"
+        return "User(nickname='$nickName', login='$avatar', badgeStatus='$badgeStatus' )"
     }
 }
 
