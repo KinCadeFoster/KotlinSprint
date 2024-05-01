@@ -4,7 +4,7 @@ class Contact(val name: String, val phoneNumber: Long, val company: String? = nu
     fun printContact() {
         println("Имя: $name")
         println("Номер: $phoneNumber")
-        println("Компани: ${company ?: "не указано"}")
+        println("Компания: ${company ?: "не указано"}")
     }
 }
 
