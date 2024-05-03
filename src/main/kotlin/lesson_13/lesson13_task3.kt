@@ -17,5 +17,5 @@ fun main() {
         Contact3("Петр", 5555555555, null),
         Contact3("Елена", 1111111111, "null")
     )
-    contacts.forEach { if (it.company != null) it.printContact() }
+    contacts.mapNotNull { it.company }.forEach { println(it) }
 }
