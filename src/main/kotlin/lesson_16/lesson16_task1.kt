@@ -2,20 +2,20 @@ package lesson_16
 
 import kotlin.random.Random
 
-class Dice(){
+class Dice() {
     private val number = getRandom()
 
     private fun getRandom(): Int {
-        return Random.nextInt(1 ,7)
+        return Random.nextInt(1, 7)
     }
 
-    fun printNumber(){
+    fun printNumber() {
         println(number)
     }
 }
 
 
-fun main(){
+fun main() {
     val number = Dice()
     number.printNumber()
 }
