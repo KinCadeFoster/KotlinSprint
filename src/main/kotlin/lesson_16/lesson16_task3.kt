@@ -1,7 +1,7 @@
 package lesson_16
 
 class UserData(
-    val login: String,
+    private val login: String,
     private val password: String,
 ) {
 
@@ -12,7 +12,6 @@ class UserData(
 
 fun main() {
     val user = UserData("Vasia", "123")
-
-    println(user.checkPassword("111"))
-    println(user.checkPassword("123"))
+    println("Password is correct: ${user.checkPassword("111")}")
+    println("Password is correct: ${user.checkPassword("123")}")
 }
