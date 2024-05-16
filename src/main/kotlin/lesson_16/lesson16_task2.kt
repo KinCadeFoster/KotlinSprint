@@ -1,20 +1,20 @@
 package lesson_16
+private const val PI = 3.14
 
 class Circle(private val radius: Double) {
-    private val Pi = 3.14
-
     fun getCircumference(): Double {
-        return 2 * Pi * radius
+        return 2 * PI * radius
     }
 
     fun getAreaCircle(): Double {
-        return Pi * radius * radius
+        return PI * radius * radius
     }
 }
 
-fun main() {
-    val circle = Circle(5.0)
 
-    println(circle.getAreaCircle())
-    println(circle.getCircumference())
+fun main() {
+    val circle = Circle(2.0)
+
+    println("Area: ${circle.getAreaCircle()}")
+    println("Circumference: ${circle.getCircumference()}")
 }
