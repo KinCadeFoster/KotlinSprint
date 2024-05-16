@@ -1,7 +1,7 @@
 package lesson_17
 
 class Folder(folderName: String, numberFiles: Int, folderSecurity: Boolean) {
-    val name = folderName
+    private val name = folderName
         get() {
             return if (security) {
                 "скрытая папка"
@@ -9,7 +9,7 @@ class Folder(folderName: String, numberFiles: Int, folderSecurity: Boolean) {
                 field
             }
         }
-    val numFiles = numberFiles
+    private val numFiles = numberFiles
         get() {
             return if (security) {
                 0
