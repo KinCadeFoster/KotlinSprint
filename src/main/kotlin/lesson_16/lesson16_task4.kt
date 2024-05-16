@@ -9,7 +9,6 @@ class Order(
         val oldStatus = status
         status = newStatus
         changeMessage(oldStatus, newStatus)
-
     }
 
     private fun changeMessage(status: String, newStatus: String) {
@@ -20,11 +19,16 @@ class Order(
         println("Поступил запрос на изменение статуса заказа №$order на $newStatus.")
         changeStatus(newStatus)
     }
+
+    fun getStatus(): String {
+        return status
+    }
 }
 
 
 fun main() {
     val order = Order(12345, "В работе")
-
+    println("Текущий статус: ${order.getStatus()}")
     order.requestChangeStatus("Выполнен")
+    println("Статус заказа после изменения: ${order.getStatus()}")
 }
