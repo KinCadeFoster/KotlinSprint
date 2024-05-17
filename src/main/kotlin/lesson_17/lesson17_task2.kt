@@ -1,12 +1,10 @@
 package lesson_17
 
-class Ship(name: String, avrSpeed: Int, port: String){
+class Ship(name: String, val avrSpeed: Int, val port: String){
     var name = name
         set(value) {
             println("Имя каробля менять нельзя!")
         }
-    var avrSpeed = avrSpeed
-    var port = port
 }
 
 
