@@ -2,14 +2,13 @@ package lesson_16
 
 import kotlin.math.abs
 
-private const val MAX_HP = 100
-
 class Hero(
     private val name: String,
-    private var health: Int = MAX_HP,
+    private val maxHealth: Int = 100,
+    private var health: Int = maxHealth,
     private var impactForce: Int = 5,
-) {
 
+) {
     fun takingDamage(damage: Int) {
         if (health > 1) {
             if (health - damage < 1)  {
@@ -26,13 +25,13 @@ class Hero(
 
     fun healing(heal: Int) {
         if (health > 0) {
-            if (health == MAX_HP) {
+            if (health == maxHealth) {
                 println("Вы здоровы, не нужно попусту тратить припасы!")
             }
-            else if (health + heal > MAX_HP) {
-                println("Вы получили лечения на ${MAX_HP - health} едениц, ${health + heal - MAX_HP} едениц потратилось в пустую. " +
-                        "Максимальное здровье не может быть более $MAX_HP едениц!")
-                health = MAX_HP
+            else if (health + heal > maxHealth) {
+                println("Вы получили лечения на ${maxHealth - health} едениц, ${health + heal - maxHealth} едениц потратилось в пустую. " +
+                        "Максимальное здровье не может быть более $maxHealth едениц!")
+                health = maxHealth
             }
             else if (health + heal < 100){
                 health += heal
