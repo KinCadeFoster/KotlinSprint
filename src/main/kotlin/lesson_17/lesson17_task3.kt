@@ -1,9 +1,9 @@
 package lesson_17
 
-class Folder(folderName: String, numberFiles: Int, folderSecurity: Boolean) {
+class Folder(folderName: String, numberFiles: Int, private val isSecret: Boolean) {
     private val name = folderName
         get() {
-            return if (security) {
+            return if (isSecret) {
                 "скрытая папка"
             } else {
                 field
@@ -11,15 +11,14 @@ class Folder(folderName: String, numberFiles: Int, folderSecurity: Boolean) {
         }
     private val numFiles = numberFiles
         get() {
-            return if (security) {
+            return if (isSecret) {
                 0
             } else {
                 field
             }
         }
-    private val security = folderSecurity
 
-    fun folderInfo() {
+    fun getFolderInfo() {
         println("Название папки: $name, количество файлов в папке: $numFiles")
     }
 }
@@ -29,6 +28,6 @@ fun main() {
     val secureFolder = Folder("Секретная папка", 10, true)
     val simpleFolder = Folder("Обычная папка", 10, false)
 
-    secureFolder.folderInfo()
-    simpleFolder.folderInfo()
+    secureFolder.getFolderInfo()
+    simpleFolder.getFolderInfo()
 }
