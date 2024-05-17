@@ -9,13 +9,15 @@ class Hero(
 ) {
 
     fun takingDamage(damage: Int) {
-        health -= abs(damage)
-        if (health < 1)  {
-            println("Ваш герой получил $damage едениц урона.") // Игрок же должен понять от чего погиб)
-            die()
-        }
-        else {
-            println("Ваш герой получил $damage едениц урона.")
+        if (health > 1) {
+            if (health - damage < 1)  {
+                health -= abs(damage)
+                println("Ваш герой получил $damage едениц урона.") // Игрок же должен понять от чего погиб)
+                die()
+            }
+            else {
+                println("Ваш герой получил $damage едениц урона.")
+            }
         }
     }
 
@@ -59,4 +61,5 @@ fun main() {
     userHero.healing(100)
     userHero.takingDamage(100)
     userHero.heroStatus()
+    userHero.takingDamage(100)
 }
