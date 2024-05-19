@@ -2,28 +2,31 @@ package lesson_18
 
 import kotlin.random.Random
 
-open class Dice {
+abstract class Dice {
     open fun rollDice() {
     }
 }
 
 class Dice4 : Dice() {
     override fun rollDice() {
-        val value = Random.nextInt(1, 5)
+        val sides = 4
+        val value = Random.nextInt(1, sides + 1)
         println("Брошен кубик с 4 гранями, результат броска: $value")
     }
 }
 
 class Dice6 : Dice() {
     override fun rollDice() {
-        val value = Random.nextInt(1, 7)
+        val sides = 6
+        val value = Random.nextInt(1, sides + 1)
         println("Брошен кубик с 6 гранями, результат броска: $value")
     }
 }
 
 class Dice8 : Dice() {
     override fun rollDice() {
-        val value = Random.nextInt(1, 9)
+        val sides = 8
+        val value = Random.nextInt(1, sides + 1)
         println("Брошен кубик с 8 гранями, результат броска: $value")
     }
 }
