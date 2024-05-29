@@ -1,11 +1,11 @@
 package lesson_20
 
-class Hero (
+class Hero(
     private val heroName: String,
     var health: Int,
     val maxHealth: Int,
-){
-    fun getHeroInfo(){
+) {
+    fun getHeroInfo() {
         println("Герой: $heroName имеет $health едениц здоровья из максимально возможных $maxHealth")
     }
 }
@@ -17,7 +17,7 @@ val healing: (Int, Hero) -> Unit = { healing: Int, hero: Hero ->
 
 
 fun main() {
-    val hero = Hero("Васян", 50,100)
+    val hero = Hero("Васян", 50, 100)
 
     hero.getHeroInfo()
     healing(10, hero)
