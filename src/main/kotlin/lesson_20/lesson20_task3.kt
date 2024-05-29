@@ -1,6 +1,6 @@
 package lesson_20
 
-class Hero(
+class Hero2(
     val name: String,
     var hasKey: Boolean = false,
 ) {
@@ -9,14 +9,14 @@ class Hero(
     }
 }
 
-val checkForKey: (Hero) -> Unit = { hero: Hero ->
+val checkForKey: (Hero2) -> Unit = { hero: Hero2 ->
     if (hero.hasKey) println("${hero.name} дверь открыл!")
     else println("${hero.name} не может открыть дверь, нет ключа!")
 }
 
 
 fun main() {
-    val hero = Hero("Васян")
+    val hero = Hero2("Васян")
     checkForKey(hero)
     hero.getKey()
     checkForKey(hero)
