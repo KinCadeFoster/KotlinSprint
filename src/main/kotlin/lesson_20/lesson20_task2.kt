@@ -12,7 +12,7 @@ class Hero(
 
 val healing: (Int, Hero) -> Unit = { healing: Int, hero: Hero ->
     hero.health += healing
-    if (hero.health > 100) hero.health = hero.maxHealth
+    if (hero.health > hero.maxHealth) hero.health = hero.maxHealth
 }
 
 
