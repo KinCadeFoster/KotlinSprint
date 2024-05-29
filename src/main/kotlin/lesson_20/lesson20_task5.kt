@@ -11,12 +11,10 @@ class Robot {
         "Убить всех человеков"
     )
 
-    private var modifier: ((String) -> String)? = null
+    private var modifier: ((String) -> String)? = { str -> str }
 
     fun say(){
-        if (modifier == null)
-        println(phrases[Random.nextInt(phrases.size)])
-        else println(modifier!!(phrases[Random.nextInt(phrases.size)]))
+        println(modifier?.let { it(phrases[Random.nextInt(phrases.size)]) })
     }
 
     fun setModifier(modifier: (String) -> String) {
