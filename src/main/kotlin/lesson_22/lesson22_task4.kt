@@ -1,5 +1,7 @@
 package lesson_22
 
+import java.lang.Thread.sleep
+
 class MainScreenViewModel{
     data class MainScreenState(
         var data: String? = null,
@@ -7,16 +9,14 @@ class MainScreenViewModel{
     )
     private var state = MainScreenState()
 
-    fun getStatus() {
-        if (state.isLoading) println("Происходит загрузка данных")
-        else if (state.data == null) println("Данные отсутствуют")
-        else println("Все в полрядке, данные загружены")
+    fun getStatus(): MainScreenState {
+        return state
     }
 
     fun loadData(){
         state = MainScreenState(isLoading = true)
-
-        getStatus()
+        println(getStatus())
+        sleep(1000)
         val data = "Полученные данные"
         state = MainScreenState(data = data, isLoading = false)
     }
@@ -25,7 +25,7 @@ class MainScreenViewModel{
 
 fun main() {
     val state = MainScreenViewModel()
-    state.getStatus()
+    println(state.getStatus())
     state.loadData()
-    state.getStatus()
+    println(state.getStatus())
 }
